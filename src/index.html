@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{ www }}</h1>
+    <h2 v-if="hidden">看到我么？</h2>
+    <input type="text" v-model="www">
+    <h3>{{hidden}}</h3>
+    <ul>
+        <li v-for=" a in list">{{a.item}}</li>
+    </ul>
+    <button type="button" @click="click">点击</button>
+    <my-component v-bind:www="www"></my-component>
+    <ul>
+        <li><router-link to="/">/</router-link></li>
+        <li><router-link to="/bar">/bar</router-link></li>
+
+    </ul>
+    <router-view class="view"></router-view>
+
+</div>
+</body>
+</html>
