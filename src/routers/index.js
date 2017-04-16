@@ -5,7 +5,7 @@ const Foo   = resolve => require.ensure([], () => resolve(require('./Foo')), 'fo
 const Bar = resolve => require.ensure([], () => resolve(require('./Bar')), 'bar');
 
 const router = new VueRouter({
-    history: true,
+    // mode: 'history',
     base: __dirname,
     routes: [
         {path: '/', component: Foo},
