@@ -1,14 +1,14 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 Vue.use(VueRouter);
-const Home   = resolve => require.ensure([], () => resolve(require('./Home')), 'home');
+const Foo   = resolve => require.ensure([], () => resolve(require('./Foo')), 'foo');
 const Bar = resolve => require.ensure([], () => resolve(require('./Bar')), 'bar');
 
 const router = new VueRouter({
-    // mode: 'history',
+    history: true,
     base: __dirname,
     routes: [
-        {path: '/', component: Home},
+        {path: '/', component: Foo},
         {path: '/bar', component: Bar}
     ]
 });
