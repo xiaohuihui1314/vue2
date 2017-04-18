@@ -30,7 +30,7 @@
     }
 </style>
 <script>
-    import { mapGetters ,mapActions} from 'vuex'
+    import {mapActions} from 'vuex'
 
     export  default{
         name: "foo",
@@ -39,10 +39,6 @@
                name:"foo"
            }
         },
-        computed: mapGetters([
-            'count',
-            'recentHistory'
-        ]),
         methods: mapActions([
             'login'
         ])
