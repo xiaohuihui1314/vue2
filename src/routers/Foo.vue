@@ -5,6 +5,9 @@
             {{name}}
             {{counts}}
         </p>
+
+
+        <input :type="isC==true?'checkbox':'radio'">
         <form class="login-from" >
             <div class="form-group">
               <span class="form-name"> 用户名：</span> <input type="text">
@@ -39,7 +42,8 @@
         name: "foo",
         data () {
            return{
-               name:"foo"
+               name:"foo",
+               isC:false
            }
         },
         computed: mapGetters({
