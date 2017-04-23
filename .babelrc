@@ -1,5 +1,4 @@
 {
-  "presets": [
-    "es2015"
-  ]
+  //es6 es7
+  "presets": ["es2015", "stage-2"]
 }

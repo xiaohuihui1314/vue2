@@ -49,8 +49,15 @@
         computed: mapGetters({
             counts: 'countData'
         }),
+        mounted(){
+             this.fetch.post("http://localhost:8888/post").then(function (data) {
+                 console.log(data)
+             }).catch(function (e) {
+                 console.log(e);
+             })
+        },
         methods: mapActions([
-            'login'
+            'login',
         ])
     }
 </script>

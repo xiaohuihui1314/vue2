@@ -1,6 +1,7 @@
 import vue  from 'vue';
 import vuex from 'vuex';
 import login from './modules/login';
+
 vue.use(vuex);
 // state 定义了应用状态的数据结构，同样可以在这里设置默认的初始状态
 // Actions 即是定义提交触发更改信息的描述，常见的例子有从服务端获取数据，

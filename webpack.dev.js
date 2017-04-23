@@ -6,6 +6,7 @@ const express = require('express'),
     webpackDevMiddleware = require('webpack-dev-middleware'),
     webpackHotMiddleware = require('webpack-hot-middleware'),
     config = require('./webpack.config'),
+     index = require('./webpack.node.api'),
 // 创建一个express实例
     app = express(),
 // 调用webpack并把配置传递过去
@@ -26,6 +27,7 @@ const hotMiddleware = webpackHotMiddleware(compiler);
 app.use(devMiddleware);
 // 注册中间件
 app.use(hotMiddleware);
+app.use('/', index);
 // 监听 8888端口，开启服务器
 app.listen(8888, function (err) {
     if (err) {
