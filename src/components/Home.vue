@@ -9,6 +9,9 @@
             <li>
                 <router-link to="/bar">/bar</router-link>
             </li>
+            <li>
+                <router-link to="/login">/login</router-link>
+            </li>
         </ul>
         <section>
             <p>{{a}}</p>

@@ -7,8 +7,12 @@ const express = require('express'),
     webpackHotMiddleware = require('webpack-hot-middleware'),
     config = require('./webpack.config'),
      index = require('./webpack.node.api'),
+     bodyParser = require('body-parser'),
+
 // 创建一个express实例
-    app = express(),
+    app = express();
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: false }));
 // 调用webpack并把配置传递过去
     compiler = webpack(config);
 

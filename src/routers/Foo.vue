@@ -8,29 +8,10 @@
 
 
         <input :type="isC==true?'checkbox':'radio'">
-        <form class="login-from" >
-            <div class="form-group">
-              <span class="form-name"> 用户名：</span> <input type="text">
-            </div>
-            <div class="form-group">
-                <span class="form-name">密码：</span> <input type="password">
-            </div>
-            <div class="form-group">
-                <button type="button" @click="login">登录</button>
-            </div>
-        </form>
+
     </div>
 </template>
-<style>
-    .login-from{
-        width: 500px;
-        margin: 0 auto;
-        padding: 25px;
-    }
-    .form-group{
-        margin-bottom: 25px;
-    }
-</style>
+
 <script>
     import {mapGetters,mapActions} from 'vuex'
         //后续在组件中使用的过程中，如果想要获取对应的状态你就可以直接使用this.$store.state获取，
@@ -56,8 +37,6 @@
                  console.log(e);
              })
         },
-        methods: mapActions([
-            'login',
-        ])
+
     }
 </script>

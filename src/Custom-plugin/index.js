@@ -24,10 +24,11 @@ export default {
             },
             post: (url, data) => {
                 const urlParameter = Vue.jsonData(data);
+                console.log(urlParameter)
                 // mode属性用来决定是否允许跨域请求，以及哪些response属性可读。可选的mode属性值为same-origin，no-cors（默认）以及cors。
                 const obj = {
                     method: "POST",
-                    mode: "no-cors",
+                    mode: "cors",
                     body: urlParameter ? urlParameter : "",
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded",
