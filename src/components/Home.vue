@@ -16,6 +16,7 @@
         <section>
             <p>{{a}}</p>
             <p>{{b}}</p>
+            <p>{{count}}</p>
             <input type="text" v-model="a">
             <input type="text" v-model="b">
             <button type="button" @click="btn">提交</button>
@@ -25,6 +26,7 @@
     </div>
 </template>
 <script>
+    import {mapGetters,mapActions} from 'vuex';
     import A from './A';
     import B from './B';
     export default{
@@ -36,9 +38,12 @@
         mounted: function () {
             this.b = this.a
         },
+        computed:mapGetters({
+            count:"homeCount"
+        }),
         methods: {
             btn(){
-                console.log(this.b)
+                this.$store.dispatch('btn',{a:1})
             }
         },
         components: {

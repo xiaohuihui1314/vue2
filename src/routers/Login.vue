@@ -3,7 +3,8 @@
         <h1 v-show="isLogin">
            Welcome to  {{userName}}
         </h1>
-        <form class="login-from" @submit="login(user)" >
+        <h2>{{count}}</h2>
+        <form class="login-from" @submit.prevent >
             <div class="form-group">
                 <span class="form-name"> 用户名：</span> <input type="text" v-model="user.userName">
             </div>
@@ -11,7 +12,7 @@
                 <span class="form-name">密码：</span> <input type="password" v-model="user.userPwd">
             </div>
             <div class="form-group">
-                <button type="submit" >登录</button>
+                <button type="submit" @click="login(user)" >登录</button>
             </div>
         </form>
     </div>
@@ -36,11 +37,12 @@
         computed:mapGetters({
             user:"user",
             userName:"userName",
-            isLogin:"isLogin"
+            isLogin:"isLogin",
+            count:"count"
         }),
         methods: {
             ...mapActions([
-                "submit"
+
             ]),
             login(user){
                 this.fetch.post("http://localhost:8888/post",user).then( (data) =>{

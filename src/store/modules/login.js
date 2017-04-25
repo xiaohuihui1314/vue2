@@ -14,6 +14,7 @@ const getters = {
     userName: state => state.userName,
     isLogin: state => state.isLogin,
     user: state => state.user,
+    count: count => state.count,
 
 };
 // actions
@@ -31,6 +32,7 @@ const mutations = {
     [types.login](state,{userName}){
         state.userName=userName;
         state.isLogin=true;
+        state.count++;
     },
     [types.submit](state){
         state.count++;
